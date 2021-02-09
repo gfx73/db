@@ -1,0 +1,4 @@
+SELECT * 
+FROM public.country
+WHERE country_id>11 AND country_id<18
+ORDER BY country_id ASC;

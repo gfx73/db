@@ -1,0 +1,19 @@
+CREATE OR REPLACE FUNCTION public.change_city()
+	RETURNS TRIGGER
+	LANGUAGE PLPGSQL
+	AS
+$$
+BEGIN
+	NEW.city = 'Ufa';
+
+RETURN NEW;
+END;
+$$
+
+	
+CREATE trigger new_customer
+after INSERT
+on customer
+for each row
+	EXECUTE PROCEDURE change_city();
+	

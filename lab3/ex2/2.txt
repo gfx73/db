@@ -1,0 +1,7 @@
+SELECT 
+	*
+FROM
+	customer_and_city
+WHERE
+	city LIKE 'A%';
+	

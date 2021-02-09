@@ -1,0 +1,7 @@
+SELECT
+	first_name
+FROM
+	customer
+GROUP BY
+	first_name
+HAVING COUNT(first_name)>1

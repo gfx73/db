@@ -1,0 +1,13 @@
+SELECT 
+	address
+FROM
+	address
+WHERE
+	city_id IN (
+			SELECT 
+			city_id
+			FROM 
+				city 
+			WHERE 
+				city LIKE 'A%'
+	);

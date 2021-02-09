@@ -1,0 +1,6 @@
+SELECT 
+	first_name, last_name, city
+FROM
+	customer, address, city
+WHERE
+	customer.address_id=address.address_id and address.city_id=city.city_id;

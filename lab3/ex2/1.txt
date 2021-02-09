@@ -1,0 +1,22 @@
+CREATE VIEW customer_and_city
+AS SELECT 
+	first_name, last_name, city
+	FROM
+		customer, address, city
+	WHERE
+		customer.address_id=address.address_id and address.city_id=city.city_id;
+		
+CREATE VIEW customer_with_big_payment
+AS SELECT
+	*
+	FROM
+		customer
+	WHERE
+		customer_id IN (
+					SELECT 
+						customer_id
+					FROM
+						payment
+					WHERE
+						amount>11
+		);
